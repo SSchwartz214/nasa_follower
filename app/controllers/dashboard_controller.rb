@@ -4,7 +4,7 @@ class DashboardController < ApplicationController
       faraday.adapter Faraday.default_adapter
     end
   
-    response = @conn.get("/planetary/apod?api_key=ZjWqIom0yjCrJgCon701RFNIEjrfwH9d6uKRoVEk")
+    response = @conn.get("/planetary/apod?api_key=#{ENV['nasa_api_key']}")
   
     @pod = JSON.parse(response.body, symbolize_names: true)[:hdurl]
   end
