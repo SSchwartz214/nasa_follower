@@ -1,4 +1,4 @@
-class NasaService
+class NasaPodService
   def pod
     JSON.parse(response.body, symbolize_names: true)[:url]
   end
