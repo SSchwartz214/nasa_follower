@@ -1,6 +1,6 @@
 class NasaService
   def pod
-    JSON.parse(response.body, symbolize_names: true)[:hdurl]
+    JSON.parse(response.body, symbolize_names: true)[:url]
   end
 
   private
