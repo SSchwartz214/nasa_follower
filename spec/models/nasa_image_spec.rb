@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe NasaItem do
+describe NasaImage do
   let(:attrs) {
     {:href=>"https://images-assets.nasa.gov/image/PIA07081/collection.json",
       :links=>[{:href=>"https://images-assets.nasa.gov/image/PIA07081/PIA07081~thumb.jpg", :render=>"image", :rel=>"preview"}],
@@ -16,10 +16,10 @@ describe NasaItem do
          :title=>"Mars Rover Studies Soil on Mars"}]}
   }
 
-  subject {NasaItem.new(attrs)}
+  subject {NasaImage.new(attrs)}
 
   it 'exists' do
-    expect(subject).to be_a NasaItem
+    expect(subject).to be_a NasaImage
   end
 
   context 'instance_methods'
