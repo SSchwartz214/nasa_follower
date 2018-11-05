@@ -2,8 +2,8 @@ class TwitterClient
 
   def initialize
     @client = Twitter::REST::Client.new do |config|
-      config.consumer_key        = "TzckMSAYq5ldKoJXxCgrHkhNs"
-      config.consumer_secret     = "GQtVipAgTCEcebHlz7T3PhNYxsA5mDMZNnpdVDYrb11cfCKMPb"
+      config.consumer_key        = ENV['twitter_consumer_key']
+      config.consumer_secret     = ENV['twitter_consumer_secret']
     end
   end
 
