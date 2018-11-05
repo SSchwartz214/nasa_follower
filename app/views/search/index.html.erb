@@ -1,7 +1,7 @@
 <div class="title">
   <h1>Search Results for: <%=@term%></h1>
 </div>
-<div class="search-results">
+<div class="nasa-search-results">
   <% @presenter.images.each do |image| %>
     <ul class="image">
       <li class="title"><%= image.title %></li>
@@ -10,4 +10,15 @@
       <li class="date">Date Taken: <%= image.date %></li>
     </ul>
     <% end %>
+</div>
+
+<div class="title">
+  <h1>Most recent Tweets from NASA about: <%=@term%></h1>
+</div>
+<div class="twitter-search-results">
+<% @tweets.each do |tweet| %>
+  <ul class="tweet">
+    <li class="text"><%= tweet.text %></li>
+  </ul>
+  <% end %>
 </div>

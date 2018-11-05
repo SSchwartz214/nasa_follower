@@ -8,6 +8,10 @@ class TwitterClient
   end
 
   def get_tweets
-    @client.user_timeline('NASA')
+    @client.user_timeline('NASA').take(3)
+  end
+
+  def search_tweets(term)
+    @client.search("from:nasa #{term}", result_type: "recent").take(3)
   end
 end

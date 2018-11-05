@@ -4,7 +4,7 @@ class NasaImageSearchPresenter
   end
 
   def images
-    service.images.map do |image_data|
+    service.images.take(3).map do |image_data|
       NasaItem.new(image_data)
     end
   end
