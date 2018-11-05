@@ -1,0 +1,13 @@
+<div class="title">
+  <h1>Search Results for: <%=@term%></h1>
+</div>
+<div class="search-results">
+  <% @presenter.images.each do |image| %>
+    <ul class="image">
+      <li class="title"><%= image.title %></li>
+      <li class="image"><%= image_tag(image.image) %></li>
+      <li class="description">Description: <%= image.description %></li>
+      <li class="date">Date Taken: <%= image.date %></li>
+    </ul>
+    <% end %>
+</div>
