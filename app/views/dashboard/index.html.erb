@@ -1,16 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Page Title</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-  <script src="main.js"></script>
-</head>
-<body>
-  <div class="main-img">
-    <%= image_tag(@pod) %>
-  </div>
-</body>
-</html>
+<div class="main-img">
+  <%= image_tag(@pod) %>
+</div>
+
+<div class="tweets">
+  <% @tweets.each do |tweet| %>
+    <ul class="tweet">
+      <li class="time"><%= formatted_tweet_date(tweet) %></li>
+      <li class="text"><%= tweet.text %></li>
+    </ul>
+  <% end %>
+</div>
+
+<div class="search-form">
+  <%= form_with url: '/search', method: :get, local: true do |f| %>
+    <%= f.label :q, "Search for:" %>
+    <%= f.text_field :q, id: :q %>
+    <%= f.submit "Search" %>
+<% end %>
+</div>
