@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'As a user' do
   it 'can search for relevant nasa data' do
-    visit '/dashboard'
+    visit '/'
 
     fill_in :q, with: "Apollo 11"
 
