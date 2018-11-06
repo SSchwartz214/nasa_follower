@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_06_193611) do
+ActiveRecord::Schema.define(version: 2018_11_06_215511) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "pic_of_day_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pic_of_day_id"], name: "index_favorites_on_pic_of_day_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
 
   create_table "pic_of_days", force: :cascade do |t|
     t.string "image_url"
@@ -33,4 +42,6 @@ ActiveRecord::Schema.define(version: 2018_11_06_193611) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "favorites", "pic_of_days"
+  add_foreign_key "favorites", "users"
 end
