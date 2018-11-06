@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @pod = NasaPodService.new.pod
+    @pod = PicOfDay.last
     @tweets = TwitterClient.new.get_tweets
   end
 end

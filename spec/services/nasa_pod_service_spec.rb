@@ -1,11 +1,7 @@
 require 'rails_helper'
 
 describe NasaPodService do
-  subject{NasaPodService.new}
-
-  it 'exists' do
-    expect(subject).to be_a NasaPodService
-  end
+  subject{NasaPodService}
 
   describe 'instance methods' do
     context 'picture of the day' do
