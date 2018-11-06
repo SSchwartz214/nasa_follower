@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe 'As a user' do
   it 'can search for relevant nasa data' do
+    PicOfDay.create(image_url: "https://via.placeholder.com/350x150")
+
     visit '/'
 
     fill_in :q, with: "Apollo 11"
