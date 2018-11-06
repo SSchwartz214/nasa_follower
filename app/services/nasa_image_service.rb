@@ -1,4 +1,4 @@
-class NasaImageSearchService
+class NasaImageService
   def initialize(term)
     @term = term
   end

@@ -1,4 +1,4 @@
-class NasaItem
+class NasaImage
   attr_reader :image,
               :title,
               :description,
