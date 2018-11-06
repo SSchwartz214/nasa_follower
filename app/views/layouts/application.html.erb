@@ -10,6 +10,22 @@
   </head>
 
   <body>
+    <div class="topnav">
+      <a class="active" href="#home">Home</a>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About</a>
+      <% if user_signed_in? %>
+        <div class="user-name">
+          Logged in as <strong><%= current_user.email %></strong>.
+        </div>
+        <%= link_to 'Edit profile', edit_user_registration_path, class: 'right-button' %>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'right-button' %>
+      <% else %>
+        <%= link_to "Sign up", new_user_registration_path, class: 'right-button' %>
+        <%= link_to "Login", new_user_session_path, class: 'right-button' %>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>
