@@ -11,10 +11,14 @@
       <h4><strong>NASA Astronomy Picture of the Day</strong><h4>
       <div class="img-container">
         <%= image_tag(@pod.image_url) %>
-        <% if @favorite %>
-          <%= link_to image_tag("unfavorite.png"), favorite_path(@favorite.id), method: :delete, class: "fav-link" %>
+        <% if user_signed_in? %>
+          <% if @favorite %>
+            <%= link_to image_tag("unfavorite.png"), favorite_path(@favorite.id), method: :delete, class: "fav-link" %>
+          <% else %>
+            <%= link_to image_tag("favorite.png"), favorites_path(favorite: {pic_of_day_id: @pod.id}), method: :post, class: "fav-link" %>
+          <% end %>
         <% else %>
-          <%= link_to image_tag("favorite.png"), favorites_path(favorite: {pic_of_day_id: @pod.id}), method: :post, class: "fav-link" %>
+          <p>Please sign up/log in to favorite picture</p>
         <% end %>
       </div>
     </div>
