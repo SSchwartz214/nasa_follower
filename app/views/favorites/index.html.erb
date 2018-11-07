@@ -2,7 +2,7 @@
   <% @favorites.each do |favorite| %>
     <div class="favorite">
       <%= image_tag(favorite.pic_of_day.image_url) %>
-      <%= link_to image_tag("unfavorite"), favorite_path(favorite.id), method: :delete, class: "fav-link" %>
+      <%= link_to image_tag("unfavorite.png"), favorite_path(favorite.id), method: :delete, class: "fav-link" %>
     </div>
   <% end %>
 </div>
