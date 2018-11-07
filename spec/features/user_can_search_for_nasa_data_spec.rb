@@ -12,7 +12,7 @@ describe 'As a user' do
 
     expect(current_path).to eq('/search')
 
-    within('.nasa-search-results') do
+    within('.image-container') do
       expect(page).to have_css('.title')
       expect(page).to have_css('.image')
       expect(page).to have_css('.description')

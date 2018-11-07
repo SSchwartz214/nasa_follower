@@ -10,7 +10,7 @@
     <div class="main-img-container">
       <h4>NASA Astronomy Picture of the Day<h4>
       <div class="img-container">
-        <%= image_tag(@pod.image_url, class:"") %>
+        <%= image_tag(@pod.image_url) %>
         <% if @favorite %>
           <%= link_to image_tag("unfavorite"), favorite_path(@favorite.id), method: :delete, class: "fav-link" %>
         <% else %>

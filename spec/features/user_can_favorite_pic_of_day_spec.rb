@@ -8,7 +8,7 @@ describe 'As a registered user' do
 
     visit '/'
 
-    click_on "Add to Favorites"
+    click_on(class: 'fav-link')
 
     expect(current_path).to eq('/favorites')
   end
@@ -20,13 +20,13 @@ describe 'As a registered user' do
 
     visit '/'
 
-    click_on "Add to Favorites"
+    click_on(class: 'fav-link')
 
     expect(current_path).to eq('/favorites')
 
     visit '/'
 
-    click_on "Remove from Favorites"
+    click_on(class: 'fav-link')
 
     expect(current_path).to eq('/')
   end
