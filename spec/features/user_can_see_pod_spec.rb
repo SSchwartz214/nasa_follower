@@ -7,6 +7,6 @@ feature "user can see NASA's POD" do
 
     visit '/'
 
-    expect(page).to have_css(".main-img")
+    expect(page).to have_css(".img-container")
   end
 end

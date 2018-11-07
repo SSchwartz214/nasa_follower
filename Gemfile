@@ -16,6 +16,8 @@ gem 'faraday'
 gem 'figaro'
 gem 'twitter'
 gem 'devise'
+gem 'bootstrap'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
