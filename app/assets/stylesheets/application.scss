@@ -59,6 +59,12 @@
 
 .fav-link {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: 10px;
+  right: 10px;
+  &:hover{
+    opacity: 0.8;
+  }
+  img{
+    width: 50px;
+  }
 }

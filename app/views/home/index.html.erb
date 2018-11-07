@@ -5,9 +5,9 @@
       <div class="img-container">
         <%= image_tag(@pod.image_url, class:"") %>
         <% if @favorite %>
-          <%= link_to "Remove from Favorites", favorite_path(@favorite.id), method: :delete, class: "fav-link" %>
+          <%= link_to image_tag("unfavorite"), favorite_path(@favorite.id), method: :delete, class: "fav-link" %>
         <% else %>
-          <%= link_to "Add to Favorites", favorites_path(favorite: {pic_of_day_id: @pod.id}), method: :post, class: "fav-link" %>
+          <%= link_to image_tag("favorite"), favorites_path(favorite: {pic_of_day_id: @pod.id}), method: :post, class: "fav-link" %>
         <% end %>
       </div>
     </div>
