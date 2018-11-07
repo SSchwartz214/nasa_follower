@@ -68,3 +68,28 @@
   display: block;
   margin: 20px auto;
 }
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 40px;
+
+  .image{
+    flex-basis: 45%;
+    margin-bottom: 30px;
+    border: 1px solid rgba(0,0,0,.125);
+    img{
+      width: 100%;
+    }
+
+    .padded{
+      padding: 5px 10px;
+    }
+  }
+}
+
+.favorites {
+  width: 500px;
+  display: block;
+  margin: 20px auto;
+}
