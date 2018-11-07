@@ -1,5 +1,5 @@
 <div class="top-container">
-  <%= image_tag("logo", class: "home-logo") %>
+  <%= image_tag("logo.png", class: "home-logo") %>
   <%= form_with url: '/search', method: :get, local: true do |f| %>
     <%= f.text_field :q, id: :q, placeholder: "Enter your term here..." %>
     <%= f.submit "Search" %>
@@ -8,13 +8,13 @@
 <div class="main-container">
   <div class="left-column">
     <div class="main-img-container">
-      <h4>NASA Astronomy Picture of the Day<h4>
+      <h4><strong>NASA Astronomy Picture of the Day</strong><h4>
       <div class="img-container">
         <%= image_tag(@pod.image_url) %>
         <% if @favorite %>
-          <%= link_to image_tag("unfavorite"), favorite_path(@favorite.id), method: :delete, class: "fav-link" %>
+          <%= link_to image_tag("unfavorite.png"), favorite_path(@favorite.id), method: :delete, class: "fav-link" %>
         <% else %>
-          <%= link_to image_tag("favorite"), favorites_path(favorite: {pic_of_day_id: @pod.id}), method: :post, class: "fav-link" %>
+          <%= link_to image_tag("favorite.png"), favorites_path(favorite: {pic_of_day_id: @pod.id}), method: :post, class: "fav-link" %>
         <% end %>
       </div>
     </div>
@@ -22,7 +22,7 @@
 
   <div class="right-column">
     <div class="tweets-container">
-      <h4>Recent Tweets from NASA:<h4>
+      <h4><strong>Recent Tweets from NASA:</strong><h4>
       <% @tweets.each do |tweet| %>
         <%= render partial: "tweets/tweet", locals: {tweet: tweet } %> 
       <% end %>
