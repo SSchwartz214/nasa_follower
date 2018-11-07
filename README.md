@@ -33,4 +33,4 @@ $ rspec
 
 Please contact me at:
 
-* Seth: https://github.com/SSchwartz214
+* Seth Schwartz: sschwartz214@gmail.com
