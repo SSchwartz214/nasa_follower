@@ -1,7 +1,8 @@
 <div class="favorites-container">
-  <% @pics.each do |pic| %>
+  <% @favorites.each do |favorite| %>
     <div class="favorite">
-      <%= image_tag(pic.image_url) %>
+      <%= image_tag(favorite.pic_of_day.image_url) %>
+      <%= link_to image_tag("unfavorite"), favorite_path(favorite.id), method: :delete, class: "fav-link" %>
     </div>
   <% end %>
 </div>

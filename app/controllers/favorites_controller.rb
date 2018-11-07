@@ -2,7 +2,7 @@ class FavoritesController < ApplicationController
   before_action :user_signed_in?
 
   def index 
-    @pics = current_user.pic_of_days
+    @favorites = current_user.favorites.includes(:pic_of_day)
   end
   
   def create
