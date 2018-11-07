@@ -1,25 +1,42 @@
-<div class="main-img">
-  <%= image_tag(@pod.image_url) %>
-  <% if @favorite %>
-    <%= link_to "Remove from Favorites", favorite_path(@favorite.id), method: :delete %>
-  <% else %>
-    <%= link_to "Add to Favorites", favorites_path(favorite: {pic_of_day_id: @pod.id}), method: :post %>
-  <% end %>
-</div>
+<div class="main-container">
+  <div class="left-column">
+    <div class="main-img-container">
+    <h4 class="display-4 text-center">NASA Astronomy Picture of the Day<h4>
+      <div class="img">
+        <%= image_tag(@pod.image_url, class: "img") %>
+      </div>
+      <% if @favorite %>
+      <div>
+      <div class="link">
+        <%= link_to "Remove from Favorites", favorite_path(@favorite.id), method: :delete %>
+      </div>
+      <% else %>
+      <div class="link">
+        <%= link_to "Add to Favorites", favorites_path(favorite: {pic_of_day_id: @pod.id}), method: :post, class: "btn btn-primary" %>
+      </div>
+      <% end %>
+    </div>
+        <div class="search-form-container">
+      <%= form_with url: '/search', method: :get, local: true do |f| %>
+        <%= f.label :q, "Search for:" %>
+        <%= f.text_field :q, id: :q %>
+        <%= f.submit "Search" %>
+      <% end %>
+    </div>
 
-<div class="tweets">
-  <% @tweets.each do |tweet| %>
-    <ul class="tweet">
-      <li class="time"><%= formatted_tweet_date(tweet) %></li>
-      <li class="text"><%= tweet.text %></li>
-    </ul>
-  <% end %>
-</div>
+  </div>
 
-<div class="search-form">
-  <%= form_with url: '/search', method: :get, local: true do |f| %>
-    <%= f.label :q, "Search for:" %>
-    <%= f.text_field :q, id: :q %>
-    <%= f.submit "Search" %>
-<% end %>
+  <div class="right-column">
+    <div class="tweets-container">
+    <h4>Recent Tweets from NASA:<h4>
+      <% @tweets.each do |tweet| %>
+      <div class="card" style="width: 100%;">
+        <ul class="tweet">
+          <li class="time"><%= formatted_tweet_date(tweet) %></li>
+          <li class="text"><%= tweet.text %></li>
+        </ul>
+      </div>
+      <% end %>
+    </div>
+  </div>
 </div>

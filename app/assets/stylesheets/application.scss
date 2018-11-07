@@ -1,3 +1,5 @@
+@import "bootstrap";
+
 /* Add a black background color to the top navigation */
 .topnav {
   background-color: gray;
@@ -32,4 +34,23 @@
 
 .user-name {
   color: white;
+}
+
+.img {
+  width: 75%;
+  height: 75%;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.left-column {
+  width: 40%;
+  align-items: center;
+}
+
+.right-column {
+  width: 40%;
 }
