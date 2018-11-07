@@ -1,15 +1,25 @@
 @import "bootstrap";
 
+.home-logo {
+  width: 500px;
+  display: block;
+  margin: 20px auto;
+}
+
 .img-container {
   position: relative;
   img{
     width: 100%
   }
 }
+.top-container{
+  text-align: center;
+}
 
 .main-container {
   display: flex;
   justify-content: space-around;
+  padding: 50px 0;
 }
 
 .left-column {
@@ -31,4 +41,9 @@
   img{
     width: 50px;
   }
+}
+
+.card {
+  padding: 15px;
+  margin: 25px 0;
 }

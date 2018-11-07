@@ -1,7 +1,14 @@
+<div class="top-container">
+  <%= image_tag("logo", class: "home-logo") %>
+  <%= form_with url: '/search', method: :get, local: true do |f| %>
+    <%= f.text_field :q, id: :q, placeholder: "Enter your term here..." %>
+    <%= f.submit "Search" %>
+  <% end %>
+</div>
 <div class="main-container">
   <div class="left-column">
     <div class="main-img-container">
-      <h4 class="display-4 text-center">NASA Astronomy Picture of the Day<h4>
+      <h4>NASA Astronomy Picture of the Day<h4>
       <div class="img-container">
         <%= image_tag(@pod.image_url, class:"") %>
         <% if @favorite %>
@@ -11,25 +18,13 @@
         <% end %>
       </div>
     </div>
-    <div class="search-form-container">
-      <%= form_with url: '/search', method: :get, local: true do |f| %>
-        <%= f.label :q, "Search for:" %>
-        <%= f.text_field :q, id: :q %>
-        <%= f.submit "Search" %>
-      <% end %>
-    </div>
   </div>
 
   <div class="right-column">
     <div class="tweets-container">
       <h4>Recent Tweets from NASA:<h4>
       <% @tweets.each do |tweet| %>
-      <div class="card" style="width: 100%;">
-        <ul class="tweet">
-          <li class="time"><%= formatted_tweet_date(tweet) %></li>
-          <li class="text"><%= tweet.text %></li>
-        </ul>
-      </div>
+        <%= render partial: "tweets/tweet", locals: {tweet: tweet } %> 
       <% end %>
     </div>
   </div>
