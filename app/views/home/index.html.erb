@@ -1,5 +1,10 @@
 <div class="main-img">
   <%= image_tag(@pod.image_url) %>
+  <% if @favorite %>
+    <%= link_to "Remove from Favorites", favorite_path(@favorite.id), method: :delete %>
+  <% else %>
+    <%= link_to "Add to Favorites", favorites_path(favorite: {pic_of_day_id: @pod.id}), method: :post %>
+  <% end %>
 </div>
 
 <div class="tweets">
