@@ -1,5 +1,7 @@
-<% @pics.each do |pic| %>
-<div class="card" style="width: 100%;">
-  <%= image_tag(pic.image_url) %>
+<div class="favorites-container">
+  <% @pics.each do |pic| %>
+    <div class="favorite">
+      <%= image_tag(pic.image_url) %>
+    </div>
+  <% end %>
 </div>
-<% end %>
