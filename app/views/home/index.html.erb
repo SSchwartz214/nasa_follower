@@ -1,12 +1,11 @@
 <div class="main-container">
   <div class="left-column">
     <div class="main-img-container">
-    <h4 class="display-4 text-center">NASA Astronomy Picture of the Day<h4>
+      <h4 class="display-4 text-center">NASA Astronomy Picture of the Day<h4>
       <div class="img">
         <%= image_tag(@pod.image_url, class: "img") %>
       </div>
       <% if @favorite %>
-      <div>
       <div class="link">
         <%= link_to "Remove from Favorites", favorite_path(@favorite.id), method: :delete %>
       </div>
@@ -16,19 +15,18 @@
       </div>
       <% end %>
     </div>
-        <div class="search-form-container">
+    <div class="search-form-container">
       <%= form_with url: '/search', method: :get, local: true do |f| %>
         <%= f.label :q, "Search for:" %>
         <%= f.text_field :q, id: :q %>
         <%= f.submit "Search" %>
       <% end %>
     </div>
-
   </div>
 
   <div class="right-column">
     <div class="tweets-container">
-    <h4>Recent Tweets from NASA:<h4>
+      <h4>Recent Tweets from NASA:<h4>
       <% @tweets.each do |tweet| %>
       <div class="card" style="width: 100%;">
         <ul class="tweet">
