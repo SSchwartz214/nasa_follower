@@ -36,9 +36,11 @@
   color: white;
 }
 
-.img {
-  width: 75%;
-  height: 75%;
+.img-container {
+  position: relative;
+  img{
+    width: 100%
+  }
 }
 
 .main-container {
@@ -53,4 +55,10 @@
 
 .right-column {
   width: 40%;
+}
+
+.fav-link {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
